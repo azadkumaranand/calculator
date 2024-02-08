@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+    .container{
+        width: 450px;
+        height: 600px;
+        background-color: bisque;
+        border: 1xp solid black;
+        position: relative;
+        margin: auto;
+        border: 2px soid black;
+        border-radius: 15px;
+        padding: 50px;
+    }
+    table, tr, td{
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    #theme{
+        position: absolute;
+        right: 10px;
+        top: 5px;
+    }
+</style>
+<body>
+    <div class="container">
+        <table id="theme">
+            <tr>
+                <td>Dark</td>
+                <td>Light</td>
+            </tr>
+        </table>
+        <div class="value">
+            <label for="number">Write your expression</label>
+            <input type="text" id="number">
+        </div>
+    </div>
+    <script>
+        const number = document.getElementById("number");
+        number.addEventListener('change', function(){
+            const number_val = number.value;
+            const val_array = number_val.split('+');
+            console.log(val_array);
+            let additiona_factor = 1;
+            val_array.forEach(function(e){
+                //additiona_factor = additiona_factor + parseFloat(e);
+                additiona_factor += parseFloat(e);
+            })
+
+            //for multiplication
+            let multipal_factor = 1;
+            val_array.forEach(function(e){
+                multipal_factor = multipal_factor * parseFloat(e);
+            })
+            console.log(typeof(val_array[0]));//string data type
+            num_val = parseFloat(number_val);
+            console.log(sum);//number data type
+        })
+    </script>
+</body>
+</html>
