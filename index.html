@@ -7,7 +7,7 @@
 </head>
 <style>
     .container{
-        width: 450px;
+        width: 600px;
         height: 600px;
         background-color: bisque;
         border: 1xp solid black;
@@ -26,41 +26,34 @@
         right: 10px;
         top: 5px;
     }
+    .opeartion_table tr td{
+        padding: 10px 20px;
+        cursor: pointer;
+    }
 </style>
 <body>
     <div class="container">
         <table id="theme">
             <tr>
                 <td>Dark</td>
-                <td>Light</td>
+            </tr>
+        </table>
+        <table class="opeartion_table" style="margin: 20px 0;">
+            <tr>
+                <td class="operator" id="add">Addition</td>
+                <td class="operator" id="sub">Substraction</td>
+                <td class="operator" id="mult">Multiplication</td>
+                <td class="operator" id="div">Division</td>
+                <td class="operator" id="rem">Remider</td>
             </tr>
         </table>
         <div class="value">
             <label for="number">Write your expression</label>
             <input type="text" id="number">
+            <button class="caculate">Calculate</button>
         </div>
+        <p class="result"></p>
     </div>
-    <script>
-        const number = document.getElementById("number");
-        number.addEventListener('change', function(){
-            const number_val = number.value;
-            const val_array = number_val.split('+');
-            console.log(val_array);
-            let additiona_factor = 1;
-            val_array.forEach(function(e){
-                //additiona_factor = additiona_factor + parseFloat(e);
-                additiona_factor += parseFloat(e);
-            })
-
-            //for multiplication
-            let multipal_factor = 1;
-            val_array.forEach(function(e){
-                multipal_factor = multipal_factor * parseFloat(e);
-            })
-            console.log(typeof(val_array[0]));//string data type
-            num_val = parseFloat(number_val);
-            console.log(sum);//number data type
-        })
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
